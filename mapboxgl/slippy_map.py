@@ -56,7 +56,7 @@ class TileServer(object):
         return [lng, lat]
 
     def get_url(self):
-        return 'http://127.0.0.1:8080/tiles/{{z}}/{{x}}/{{y}}.{}'.format(self.tileformat)
+        return 'http://127.0.0.1:{port}/tiles/{{z}}/{{x}}/{{y}}.{tileformat}'.format(tileformat=self.tileformat, port=self.port)
 
     def start(self):
         self.server.listen(self.port)
